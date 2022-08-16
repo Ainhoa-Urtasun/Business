@@ -23,7 +23,7 @@ def sfp(Tangible_fixed_assets,Accummulated_depreciation,Stocks,Debtors,Cash,Capi
   global Expenses
   global Dividends
   global Noncurrent_liabilities
-  global Current_liabilities = 0
+  global Current_liabilities
   Fixed_assets = Tangible_fixed_assets + Accumulated_depreciation
   Current_assets = Stocks + Debtors + Cash
   Retained_earnings = Revenue + Expenses + Dividends
