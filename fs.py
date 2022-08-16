@@ -25,6 +25,7 @@ def values():
   Noncurrent_liabilities = 0
   Current_liabilities = 0
   print(Cash)
+  return(Cash)
 
 def sfp():
   global Tangible_fixed_assets
