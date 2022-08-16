@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+
 Tangible_fixed_assets = 0
 Accumulated_depreciation = 0
 Stocks = 0
