@@ -24,6 +24,7 @@ def values():
   Dividends = 0
   Noncurrent_liabilities = 0
   Current_liabilities = 0
+  print(Cash)
 
 def sfp():
   Fixed_assets = Tangible_fixed_assets + Accumulated_depreciation
