@@ -12,10 +12,8 @@ Dividends = 0
 Noncurrent_liabilities = 0
 Current_liabilities = 0
 
-def sfp(mylist):
-  mylist = [Tangible_fixed_assets,Accumulated_depreciation,Stocks,Debtors,Cash,Capital,Revenue,Expenses,Dividends,Noncurrent_liabilities,Current_liabilities]
-  print(mylist)
-  Fixed_assets = mylist[0] + mylist[1]
+def sfp(Tangible_fixed_assets,Accumulated_depreciation,Stocks,Debtors,Cash,Capital,Revenue,Expenses,Dividends,Noncurrent_liabilities,Current_liabilities):
+  Fixed_assets = Tangible_fixed_assets + Accumulated_depreciation
   Current_assets = Stocks + Debtors + Cash
   Retained_earnings = Revenue + Expenses + Dividends
   fig = plt.figure(figsize=(5,8))
@@ -23,7 +21,7 @@ def sfp(mylist):
   plt.bar(labels,[Current_assets,Current_liabilities])
   plt.bar(labels,[Fixed_assets,Noncurrent_liabilities],bottom=[Current_assets,Current_liabilities])
   plt.bar(labels,[0,Retained_earnings],bottom=[Current_assets+Fixed_assets,Current_liabilities+Noncurrent_liabilities])
-  plt.bar(labels,[0,mylist[5]],bottom=[Current_assets+Fixed_assets,Current_liabilities+Noncurrent_liabilities+Retained_earnings])
+  plt.bar(labels,[0,Capital],bottom=[Current_assets+Fixed_assets,Current_liabilities+Noncurrent_liabilities+Retained_earnings])
   plt.title('Balance sheet')
   if Current_assets > 0:
     plt.text(0,Current_assets*0.5,'Current assets\n'+str(Current_assets),va='center',ha='center')
