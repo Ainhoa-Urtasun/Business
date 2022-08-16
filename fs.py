@@ -12,7 +12,7 @@ Dividends = 0
 Noncurrent_liabilities = 0
 Current_liabilities = 0
 
-def sfp():
+def sfp(mylist):
   mylist = [Tangible_fixed_assets,Accumulated_depreciation,Stocks,Debtors,Cash,Capital,Revenue,Expenses,Dividends,Noncurrent_liabilities,Current_liabilities]
   print(mylist)
   Fixed_assets = mylist[0] + mylist[1]
