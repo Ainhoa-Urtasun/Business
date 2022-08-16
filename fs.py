@@ -34,5 +34,6 @@ def SFP():
     plt.text(1,Retained_earnings*0.5+Noncurrent_liabilities+Current_liabilities,'Retained earnings\n'+str(Retained_earnings),va='center',ha='center')
   if Capital > 0:
     plt.text(1,Capital*0.5+Retained_earnings+Noncurrent_liabilities+Current_liabilities,'Capital\n'+str(Capital),va='center',ha='center')
-  plt.show()
   print(Capital)
+  plt.show()
+  
