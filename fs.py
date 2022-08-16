@@ -12,7 +12,7 @@ Dividends = 0
 Noncurrent_liabilities = 0
 Current_liabilities = 0
 
-def sfp():
+def sfp(Capital,Cash):
   Fixed_assets = Tangible_fixed_assets + Accumulated_depreciation
   Current_assets = Stocks + Debtors + Cash
   Retained_earnings = Revenue + Expenses + Dividends
