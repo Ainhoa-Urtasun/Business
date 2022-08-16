@@ -1,5 +1,5 @@
 global Tangible_fixed_assets
-global Accumulated_depreciation = 0
+global Accumulated_depreciation
 global Stocks
 global Debtors
 global Cash
