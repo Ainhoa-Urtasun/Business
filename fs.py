@@ -1,18 +1,6 @@
 import matplotlib.pyplot as plt
 
-Tangible_fixed_assets = 0
-Accumulated_depreciation = 0
-Stocks = 0
-Debtors = 0
-Cash = 0
-Capital = 0
-Revenue= 0
-Expenses = 0
-Dividends = 0
-Noncurrent_liabilities = 0
-Current_liabilities = 0
-
-def SFP(Capital,Cash): 
+def SFP(): 
   Fixed_assets = Tangible_fixed_assets + Accumulated_depreciation
   Current_assets = Stocks + Debtors + Cash
   Retained_earnings = Revenue + Expenses + Dividends
