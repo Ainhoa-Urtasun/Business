@@ -14,6 +14,7 @@ Current_liabilities = 0
 
 def sfp():
   mylist = [Tangible_fixed_assets,Accumulated_depreciation,Stocks,Debtors,Cash,Capital,Revenue,Expenses,Dividends,Noncurrent_liabilities,Current_liabilities]
+  print(mylist)
   Fixed_assets = mylist[0] + mylist[1]
   Current_assets = Stocks + Debtors + Cash
   Retained_earnings = Revenue + Expenses + Dividends
