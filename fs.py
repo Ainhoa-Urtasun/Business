@@ -13,6 +13,17 @@ Noncurrent_liabilities = 0
 Current_liabilities = 0
 
 def sfp(Tangible_fixed_assets,Accummulated_depreciation,Stocks,Debtors,Cash,Capital,Revenue,Expenses,Dividends,Noncurrent_liabilities,Current_liabilities):
+  global Tangible_fixed_assets
+  global Accumulated_depreciation
+  global Stocks
+  global Debtors
+  global Cash
+  global Capital
+  global Revenue
+  global Expenses
+  global Dividends
+  global Noncurrent_liabilities
+  global Current_liabilities = 0
   Fixed_assets = Tangible_fixed_assets + Accumulated_depreciation
   Current_assets = Stocks + Debtors + Cash
   Retained_earnings = Revenue + Expenses + Dividends
