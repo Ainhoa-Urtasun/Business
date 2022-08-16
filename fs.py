@@ -12,9 +12,9 @@ Dividends = 0
 Noncurrent_liabilities = 0
 Current_liabilities = 0
 
-mylist = [Tangible_fixed_assets,Accumulated_depreciation,Stocks,Debtors,Cash,Capital,Revenue,Expenses,Dividends,Noncurrent_liabilities,Current_liabilities]
 def sfp(mylist):
-  Fixed_assets = Tangible_fixed_assets + Accumulated_depreciation
+  mylist = [Tangible_fixed_assets,Accumulated_depreciation,Stocks,Debtors,Cash,Capital,Revenue,Expenses,Dividends,Noncurrent_liabilities,Current_liabilities]
+  Fixed_assets = mylist[0] + mylist[1]
   Current_assets = Stocks + Debtors + Cash
   Retained_earnings = Revenue + Expenses + Dividends
   fig = plt.figure(figsize=(5,8))
