@@ -39,6 +39,7 @@ def Balance(Tangible_fixed_assets,Accumulated_depreciation,Stocks,Debtors,Cash,C
   plt.show()
   
 def Income(Revenue,COGS,Other_operating_expenses,Financial_expenses,Taxation):
+  Expenses = COGS + Other_operating_expenses + Financial_expenses + Taxation
   Gross_profit = Revenue - COGS
   EBIT = Gross_profit - Other_operating_expenses
   EBT = EBIT - Financial_expenses
