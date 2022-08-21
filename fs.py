@@ -38,12 +38,11 @@ def Balance(Tangible_fixed_assets,Accumulated_depreciation,Stocks,Debtors,Cash,C
     plt.text(1,Capital*0.5+Retained_earnings+Noncurrent_liabilities+Current_liabilities,'Capital\n'+str(Capital),va='center',ha='center')
   plt.show()
   
-Gross_profit = Revenue - COGS
-EBIT = Gross_profit - Other_operating_expenses
-EBT = EBIT - Financial_expenses
-Net_income = EBT - Taxation
-  
 def Income(COGS,Other_operating_expenses,Financial_expenses,Taxation):
+  Gross_profit = Revenue - COGS
+  EBIT = Gross_profit - Other_operating_expenses
+  EBT = EBIT - Financial_expenses
+  Net_income = EBT - Taxation
   fig = plt.figure(figsize=(10,10))
   labels = ['Revenue','Expenses','Classified expenses']
   plt.subplot(2,1,1)
