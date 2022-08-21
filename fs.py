@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import seaborn
 
 Tangible_fixed_assets = 0
 Accumulated_depreciation = 0
@@ -12,7 +13,7 @@ Dividends = 0
 Noncurrent_liabilities = 0
 Current_liabilities = 0
 
-def sfp(Tangible_fixed_assets,Accumulated_depreciation,Stocks,Debtors,Cash,Capital,Revenue,Expenses,Dividends,Noncurrent_liabilities,Current_liabilities):
+def Balance(Tangible_fixed_assets,Accumulated_depreciation,Stocks,Debtors,Cash,Capital,Revenue,Expenses,Dividends,Noncurrent_liabilities,Current_liabilities):
   Fixed_assets = Tangible_fixed_assets + Accumulated_depreciation
   Current_assets = Stocks + Debtors + Cash
   Retained_earnings = Revenue + Expenses + Dividends
@@ -36,3 +37,31 @@ def sfp(Tangible_fixed_assets,Accumulated_depreciation,Stocks,Debtors,Cash,Capit
   if Capital > 0:
     plt.text(1,Capital*0.5+Retained_earnings+Noncurrent_liabilities+Current_liabilities,'Capital\n'+str(Capital),va='center',ha='center')
   plt.show()
+  
+Gross_profit = Revenue - COGS
+EBIT = Gross_profit - Other_operating_expenses
+EBT = EBIT - Financial_expenses
+Net_income = EBT - Taxation
+  
+def Income(COGS,Other_operating_expenses,Financial_expenses,Taxation):
+  fig = plt.figure(figsize=(10,10))
+  labels = ['Revenue','Expenses','Classified expenses']
+  plt.subplot(2,1,1)
+  plt.bar(labels,[Revenue,Expenses,-Taxation],color=['green','darkorchid','thistle'])
+  plt.bar(labels,[0,0,-Financial_expenses],bottom=[Revenue,Expenses,-Taxation],color=['green','darkorchid','plum'])
+  plt.bar(labels,[0,0,-Other_operating_expenses],bottom=[Revenue,Expenses,-Taxation-Financial_expenses],color=['green','darkorchid','violet'])
+  plt.bar(labels,[0,0,-COGS],bottom=[Revenue,Expenses,-Taxation-Financial_expenses-Other_operating_expenses],color=['green','darkorchid','purple'])
+  plt.hlines(0,-1,3,colors='red',linestyle='--')
+  seaborn.despine(left=True, bottom=True, right=True)
+  plt.title('Income statement')
+  if Taxation > 0:
+    plt.text(2,-Taxation*0.5,'Taxation\n'+str(Taxation),va='center',ha='center')
+  if Financial_expenses > 0:
+    plt.text(2,-Financial_expenses*0.5-Taxation,'Financial expenses\n'+str(Financial_expenses),va='center',ha='center')
+  if Other_operating_expenses > 0:
+    plt.text(2,-Other_operating_expenses*0.5-Financial_expenses-Taxation,'Other operating\nexpenses '+str(Other_operating_expenses),va='center',ha='center')
+  if COGS > 0:
+    plt.text(2,-COGS*0.5-Other_operating_expenses-Financial_expenses-Taxation,'COGS\n'+str(COGS),va='center',ha='center')
+  plt.subplot(2,1,2)
+  plt.bar(['Gross profit','EBIT','EBT','Net income'],[Gross_profit,EBIT,EBT,Net_income],color=['seashell','peachpuff','sandybrown','chocolate'])
+  seaborn.despine(left=True, bottom=True, right=True)
