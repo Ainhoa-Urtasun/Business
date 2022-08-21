@@ -38,7 +38,7 @@ def Balance(Tangible_fixed_assets,Accumulated_depreciation,Stocks,Debtors,Cash,C
     plt.text(1,Capital*0.5+Retained_earnings+Noncurrent_liabilities+Current_liabilities,'Capital\n'+str(Capital),va='center',ha='center')
   plt.show()
   
-def Income(COGS,Other_operating_expenses,Financial_expenses,Taxation):
+def Income(Revenue,COGS,Other_operating_expenses,Financial_expenses,Taxation):
   Gross_profit = Revenue - COGS
   EBIT = Gross_profit - Other_operating_expenses
   EBT = EBIT - Financial_expenses
@@ -63,4 +63,5 @@ def Income(COGS,Other_operating_expenses,Financial_expenses,Taxation):
     plt.text(2,-COGS*0.5-Other_operating_expenses-Financial_expenses-Taxation,'COGS\n'+str(COGS),va='center',ha='center')
   plt.subplot(2,1,2)
   plt.bar(['Gross profit','EBIT','EBT','Net income'],[Gross_profit,EBIT,EBT,Net_income],color=['seashell','peachpuff','sandybrown','chocolate'])
+  plt.hlines(0,-1,3,colors='red',linestyle='--')
   seaborn.despine(left=True, bottom=True, right=True)
