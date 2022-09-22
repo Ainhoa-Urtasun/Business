@@ -25,7 +25,7 @@ def Balance(Fixed_assets,Stocks,Debtors,Cash,Capital,Retained_earnings,Noncurren
     plt.text(0,Cash*0.5,'Cash\n'+str(Cash),va='center',ha='center')
   if Debtors > 0:
     plt.text(0,Debtors*0.5+Cash,'Debtors\n'+str(Debtors),va='center',ha='center')
-   if Stocks > 0:
+  if Stocks > 0:
     plt.text(0,Stocks*0.5+Debtors+Cash,'Stocks\n'+str(Stocks),va='center',ha='center')
   if Fixed_assets > 0:
     plt.text(0,Fixed_assets*0.5+Stocks+Debtors+Cash,'Fixed_assets\n'+str(Fixed_assets),va='center',ha='center')
