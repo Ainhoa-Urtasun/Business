@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import seaborn
 
-Tangible_fixed_assets = 0
+Fixed_assets = 0
 Accumulated_depreciation = 0
 Stocks = 0
 Debtors = 0
@@ -13,21 +13,22 @@ Dividends = 0
 Noncurrent_liabilities = 0
 Current_liabilities = 0
 
-def Balance(Tangible_fixed_assets,Accumulated_depreciation,Stocks,Debtors,Cash,Capital,Revenue,Expenses,Dividends,Noncurrent_liabilities,Current_liabilities):
-  Fixed_assets = Tangible_fixed_assets + Accumulated_depreciation
-  Current_assets = Stocks + Debtors + Cash
-  Retained_earnings = Revenue + Expenses + Dividends
+def Balance(Fixed_assets,Stocks,Debtors,Cash,Capital,Retained_earnings,Noncurrent_liabilities,Current_liabilities):
   fig = plt.figure(figsize=(5,8))
   labels = ['Assets','Equity and liabilities']
-  plt.bar(labels,[Current_assets,Current_liabilities])
-  plt.bar(labels,[Fixed_assets,Noncurrent_liabilities],bottom=[Current_assets,Current_liabilities])
-  plt.bar(labels,[0,Retained_earnings],bottom=[Current_assets+Fixed_assets,Current_liabilities+Noncurrent_liabilities])
-  plt.bar(labels,[0,Capital],bottom=[Current_assets+Fixed_assets,Current_liabilities+Noncurrent_liabilities+Retained_earnings])
+  plt.bar(labels,[Cash,Current_liabilities])
+  plt.bar(labels,[Debtors,Noncurrent_liabilities],bottom=[Cash,Current_liabilities])
+  plt.bar(labels,[Stocks,Retained_earnings],bottom=[Debtors+Cash,Noncurrent_liabilities+Current_liabilities])
+  plt.bar(labels,[Fixed_assets,Capital],bottom=[Stocks+Debtors+Cash,Retained_earnings+Noncurrent_liabilities+Current_liabilities])
   plt.title('Balance sheet')
-  if Current_assets > 0:
-    plt.text(0,Current_assets*0.5,'Current assets\n'+str(Current_assets),va='center',ha='center')
+  if Cash > 0:
+    plt.text(0,Cash*0.5,'Cash\n'+str(Cash),va='center',ha='center')
+  if Debtors > 0:
+    plt.text(0,Debtors*0.5+Cash,'Debtors\n'+str(Debtors),va='center',ha='center')
+   if Stocks > 0:
+    plt.text(0,Stocks*0.5+Debtors+Cash,'Stocks\n'+str(Stocks),va='center',ha='center')
   if Fixed_assets > 0:
-    plt.text(0,Fixed_assets*0.5+Current_assets,'Fixed assets\n'+str(Fixed_assets),va='center',ha='center')
+    plt.text(0,Fixed_assets*0.5+Stocks+Debtors+Cash,'Fixed_assets\n'+str(Fixed_assets),va='center',ha='center')
   if Current_liabilities > 0:
     plt.text(1,Current_liabilities*0.5,'Current liabilities\n'+str(Current_liabilities),va='center',ha='center')
   if Noncurrent_liabilities > 0:
