@@ -12,7 +12,7 @@ Current_liabilities = 0
 
 def Balance(Fixed_assets,Stocks,Debtors,Cash,Capital,Retained_earnings,Noncurrent_liabilities,Current_liabilities):
   fig = plt.figure(figsize=(5,8))
-  labels = ['Assets','Equity and liabilities']
+  labels = ['Assets','Equity and Liabilities']
   plt.bar(labels,[Cash,Current_liabilities])
   plt.bar(labels,[Debtors,Noncurrent_liabilities],bottom=[Cash,Current_liabilities])
   plt.bar(labels,[Stocks,Retained_earnings],bottom=[Debtors+Cash,Noncurrent_liabilities+Current_liabilities])
