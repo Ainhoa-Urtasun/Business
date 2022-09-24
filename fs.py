@@ -40,14 +40,14 @@ def Income(Revenue,Expenses,COGS,Other_operating_expenses,Financial_expenses,Tax
   fig = plt.figure(figsize=(10,10))
   labels = ['Revenue','Expenses','Classified expenses']
   plt.subplot(2,1,1)
+  seaborn.despine(left=True, bottom=True, right=True)
   plt.bar(labels,[Revenue,-Expenses,-Taxation],color=['green','darkorchid','thistle'])
   plt.bar(labels,[0,0,-Financial_expenses],bottom=[Revenue,-Expenses,-Taxation],color=['green','darkorchid','plum'])
   plt.bar(labels,[0,0,-Other_operating_expenses],bottom=[Revenue,-Expenses,-Taxation-Financial_expenses],color=['green','darkorchid','violet'])
   plt.bar(labels,[0,0,-COGS],bottom=[Revenue,-Expenses,-Taxation-Financial_expenses-Other_operating_expenses],color=['green','darkorchid','purple'])
   plt.xticks([])
   plt.hlines(0,-1,3,colors='red',linestyle='--')
-  #seaborn.despine(left=True, bottom=True, right=True)
-  plt.title('Income statement')
+  plt.title('Income Statement')
   if Revenue > 0:
     plt.text(0,Revenue*0.5,'Revenue\n'+str(Revenue),va='center',ha='center')
   if Expenses > 0:
@@ -61,6 +61,7 @@ def Income(Revenue,Expenses,COGS,Other_operating_expenses,Financial_expenses,Tax
   if COGS > 0:
     plt.text(2,-COGS*0.5-Other_operating_expenses-Financial_expenses-Taxation,'COGS\n'+str(COGS),va='center',ha='center')
   plt.subplot(2,1,2)
+  seaborn.despine(left=True, bottom=True, right=True)
   plt.bar(['Gross profit','EBIT','EBT','Net income'],[Gross_profit,EBIT,EBT,Net_income],color=['seashell','peachpuff','sandybrown','chocolate'])
   plt.hlines(0,-1,3,colors='red',linestyle='--')
   if Gross_profit > 0:
@@ -71,4 +72,4 @@ def Income(Revenue,Expenses,COGS,Other_operating_expenses,Financial_expenses,Tax
     plt.text(2,EBT*0.5,'EBT\n'+str(EBT),va='center',ha='center')
   if Net_income > 0:
     plt.text(3,Net_income*0.5,'Net Income\n'+str(Net_income),va='center',ha='center')
-  #seaborn.despine(left=True, bottom=True, right=True)
+ 
