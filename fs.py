@@ -50,7 +50,7 @@ def Income(Revenue,Expenses,COGS,Other_operating_expenses,Financial_expenses,Tax
   if Revenue > 0:
     plt.text(0,Revenue*0.5,'Revenue\n'+str(Revenue),va='center',ha='center')
   if Expenses > 0:
-    plt.text(1,Expenses*0.5,'Expenses\n'+str(Expenses),va='center',ha='center')
+    plt.text(1,-Expenses*0.5,'Expenses\n'+str(Expenses),va='center',ha='center')
   if Taxation > 0:
     plt.text(2,-Taxation*0.5,'Taxation\n'+str(Taxation),va='center',ha='center')
   if Financial_expenses > 0:
