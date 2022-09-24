@@ -47,8 +47,8 @@ def Income(Revenue,Expenses,COGS,Other_operating_expenses,Financial_expenses,Tax
   plt.hlines(0,-1,3,colors='red',linestyle='--')
   seaborn.despine(left=True, bottom=True, right=True)
   plt.title('Income statement')
-  if Revenues > 0:
-    plt.text(0,Revenues*0.5,'Revenues\n'+str(Revenues),va='center',ha='center')
+  if Revenue > 0:
+    plt.text(0,Revenue*0.5,'Revenue\n'+str(Revenue),va='center',ha='center')
   if Expenses > 0:
     plt.text(0,Expenses*0.5,'Expenses\n'+str(Expenses),va='center',ha='center')
   if Taxation > 0:
