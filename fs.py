@@ -36,7 +36,7 @@ def Balance(Fixed_assets,Stocks,Debtors,Cash,Capital,Retained_earnings,Noncurren
     plt.text(1,Capital*0.5+Retained_earnings+Noncurrent_liabilities+Current_liabilities,'Capital\n'+str(Capital),va='center',ha='center')
   plt.show()
   
-def Income(Revenue,COGS,Other_operating_expenses,Financial_expenses,Taxation):
+def Income(Revenue,COGS,Other_operating_expenses,Financial_expenses,Taxation,Gross_profit,EBIT,EBT,Net_income):
   Expenses = COGS + Other_operating_expenses + Financial_expenses + Taxation
   fig = plt.figure(figsize=(10,10))
   labels = ['Revenue','Expenses','Classified expenses']
