@@ -36,8 +36,7 @@ def Balance(Fixed_assets,Stocks,Debtors,Cash,Capital,Retained_earnings,Noncurren
     plt.text(1,Capital*0.5+Retained_earnings+Noncurrent_liabilities+Current_liabilities,'Capital\n'+str(Capital),va='center',ha='center')
   plt.show()
   
-def Income(Revenue,COGS,Other_operating_expenses,Financial_expenses,Taxation,Gross_profit,EBIT,EBT,Net_income):
-  Expenses = COGS + Other_operating_expenses + Financial_expenses + Taxation
+def Income(Revenue,Expenses,COGS,Other_operating_expenses,Financial_expenses,Taxation,Gross_profit,EBIT,EBT,Net_income):
   fig = plt.figure(figsize=(10,10))
   labels = ['Revenue','Expenses','Classified expenses']
   plt.subplot(2,1,1)
@@ -48,6 +47,10 @@ def Income(Revenue,COGS,Other_operating_expenses,Financial_expenses,Taxation,Gro
   plt.hlines(0,-1,3,colors='red',linestyle='--')
   seaborn.despine(left=True, bottom=True, right=True)
   plt.title('Income statement')
+  if Revenues > 0:
+    plt.text(0,Revenues*0.5,'Revenues\n'+str(Revenues),va='center',ha='center')
+  if Expenses > 0:
+    plt.text(0,Expenses*0.5,'Expenses\n'+str(Expenses),va='center',ha='center')
   if Taxation > 0:
     plt.text(2,-Taxation*0.5,'Taxation\n'+str(Taxation),va='center',ha='center')
   if Financial_expenses > 0:
@@ -59,4 +62,12 @@ def Income(Revenue,COGS,Other_operating_expenses,Financial_expenses,Taxation,Gro
   plt.subplot(2,1,2)
   plt.bar(['Gross profit','EBIT','EBT','Net income'],[Gross_profit,EBIT,EBT,Net_income],color=['seashell','peachpuff','sandybrown','chocolate'])
   plt.hlines(0,-1,3,colors='red',linestyle='--')
+  if Gross_profit > 0:
+    plt.text(0,Gross_profit*0.5,'Gross Profit\n'+str(Gross_profit),va='center',ha='center')
+  if EBIT > 0:
+    plt.text(1,EBIT*0.5,'EBIT\n'+str(EBIT),va='center',ha='center')
+  if EBT > 0:
+    plt.text(1,EBT*0.5,'EBT\n'+str(EBT),va='center',ha='center')
+  if Net_income > 0:
+    plt.text(1,Net_income*0.5,'Net Income\n'+str(Net_income),va='center',ha='center')
   seaborn.despine(left=True, bottom=True, right=True)
