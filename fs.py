@@ -50,7 +50,7 @@ def Income(Revenue,Expenses,COGS,Other_operating_expenses,Financial_expenses,Tax
   if Revenue > 0:
     plt.text(0,Revenue*0.5,'Revenue\n'+str(Revenue),va='center',ha='center')
   if Expenses > 0:
-    plt.text(0,Expenses*0.5,'Expenses\n'+str(Expenses),va='center',ha='center')
+    plt.text(1,Expenses*0.5,'Expenses\n'+str(Expenses),va='center',ha='center')
   if Taxation > 0:
     plt.text(2,-Taxation*0.5,'Taxation\n'+str(Taxation),va='center',ha='center')
   if Financial_expenses > 0:
@@ -67,7 +67,7 @@ def Income(Revenue,Expenses,COGS,Other_operating_expenses,Financial_expenses,Tax
   if EBIT > 0:
     plt.text(1,EBIT*0.5,'EBIT\n'+str(EBIT),va='center',ha='center')
   if EBT > 0:
-    plt.text(1,EBT*0.5,'EBT\n'+str(EBT),va='center',ha='center')
+    plt.text(2,EBT*0.5,'EBT\n'+str(EBT),va='center',ha='center')
   if Net_income > 0:
-    plt.text(1,Net_income*0.5,'Net Income\n'+str(Net_income),va='center',ha='center')
+    plt.text(3,Net_income*0.5,'Net Income\n'+str(Net_income),va='center',ha='center')
   seaborn.despine(left=True, bottom=True, right=True)
