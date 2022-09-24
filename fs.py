@@ -25,13 +25,13 @@ def Balance(Fixed_assets,Stocks,Debtors,Cash,Capital,Retained_earnings,Noncurren
   if Stocks > 0:
     plt.text(0,Stocks*0.5+Debtors+Cash,'Stocks\n'+str(Stocks),va='center',ha='center')
   if Fixed_assets > 0:
-    plt.text(0,Fixed_assets*0.5+Stocks+Debtors+Cash,'Fixed_assets\n'+str(Fixed_assets),va='center',ha='center')
+    plt.text(0,Fixed_assets*0.5+Stocks+Debtors+Cash,'Fixed_assets\n'+str(Fixed Assets),va='center',ha='center')
   if Current_liabilities > 0:
-    plt.text(1,Current_liabilities*0.5,'Current liabilities\n'+str(Current_liabilities),va='center',ha='center')
+    plt.text(1,Current_liabilities*0.5,'Current liabilities\n'+str(Current Liabilities),va='center',ha='center')
   if Noncurrent_liabilities > 0:
-    plt.text(1,Noncurrent_liabilities*0.5+Current_liabilities,'Noncurrent liabilities\n'+str(Noncurrent_liabilities),va='center',ha='center')
+    plt.text(1,Noncurrent_liabilities*0.5+Current_liabilities,'Noncurrent liabilities\n'+str(Noncurrent Liabilities),va='center',ha='center')
   if Retained_earnings > 0:
-    plt.text(1,Retained_earnings*0.5+Noncurrent_liabilities+Current_liabilities,'Retained earnings\n'+str(Retained_earnings),va='center',ha='center')
+    plt.text(1,Retained_earnings*0.5+Noncurrent_liabilities+Current_liabilities,'Retained earnings\n'+str(Retained Earnings),va='center',ha='center')
   if Capital > 0:
     plt.text(1,Capital*0.5+Retained_earnings+Noncurrent_liabilities+Current_liabilities,'Capital\n'+str(Capital),va='center',ha='center')
   plt.show()
