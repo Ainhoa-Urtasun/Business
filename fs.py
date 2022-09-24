@@ -38,10 +38,10 @@ def Balance(Fixed_assets,Stocks,Debtors,Cash,Capital,Retained_earnings,Noncurren
   
 def Income(Revenue,COGS,Other_operating_expenses,Financial_expenses,Taxation):
   Expenses = COGS + Other_operating_expenses + Financial_expenses + Taxation
-  Gross_profit = Revenue - COGS
-  EBIT = Gross_profit - Other_operating_expenses
-  EBT = EBIT - Financial_expenses
-  Net_income = EBT - Taxation
+  Gross_profit = Revenue + COGS
+  EBIT = Gross_profit + Other_operating_expenses
+  EBT = EBIT + Financial_expenses
+  Net_income = EBT + Taxation
   fig = plt.figure(figsize=(10,10))
   labels = ['Revenue','Expenses','Classified expenses']
   plt.subplot(2,1,1)
