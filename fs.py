@@ -44,7 +44,7 @@ def Income(Revenue,COGS,Other_operating_expenses,Financial_expenses,Taxation,Gro
   plt.bar(labels,[Revenue,-Expenses,-Taxation],color=['green','darkorchid','thistle'])
   plt.bar(labels,[0,0,-Financial_expenses],bottom=[Revenue,-Expenses,-Taxation],color=['green','darkorchid','plum'])
   plt.bar(labels,[0,0,-Other_operating_expenses],bottom=[Revenue,-Expenses,-Taxation-Financial_expenses],color=['green','darkorchid','violet'])
-  plt.bar(labels,[0,0,COGS],bottom=[Revenue,-Expenses,-Taxation-Financial_expenses-Other_operating_expenses],color=['green','darkorchid','purple'])
+  plt.bar(labels,[0,0,-COGS],bottom=[Revenue,-Expenses,-Taxation-Financial_expenses-Other_operating_expenses],color=['green','darkorchid','purple'])
   plt.hlines(0,-1,3,colors='red',linestyle='--')
   seaborn.despine(left=True, bottom=True, right=True)
   plt.title('Income statement')
