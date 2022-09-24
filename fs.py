@@ -46,7 +46,7 @@ def Income(Revenue,Expenses,COGS,Other_operating_expenses,Financial_expenses,Tax
   plt.bar(labels,[0,0,-COGS],bottom=[Revenue,-Expenses,-Taxation-Financial_expenses-Other_operating_expenses],color=['green','darkorchid','purple'])
   plt.xticks([])
   plt.hlines(0,-1,3,colors='red',linestyle='--')
-  seaborn.despine(left=True, bottom=True, right=True)
+  #seaborn.despine(left=True, bottom=True, right=True)
   plt.title('Income statement')
   if Revenue > 0:
     plt.text(0,Revenue*0.5,'Revenue\n'+str(Revenue),va='center',ha='center')
@@ -71,4 +71,4 @@ def Income(Revenue,Expenses,COGS,Other_operating_expenses,Financial_expenses,Tax
     plt.text(2,EBT*0.5,'EBT\n'+str(EBT),va='center',ha='center')
   if Net_income > 0:
     plt.text(3,Net_income*0.5,'Net Income\n'+str(Net_income),va='center',ha='center')
-  seaborn.despine(left=True, bottom=True, right=True)
+  #seaborn.despine(left=True, bottom=True, right=True)
