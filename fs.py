@@ -49,13 +49,13 @@ def Income(Revenue,COGS,Other_operating_expenses,Financial_expenses,Taxation,Gro
   seaborn.despine(left=True, bottom=True, right=True)
   plt.title('Income statement')
   if Taxation > 0:
-    plt.text(2,Taxation*0.5,'Taxation\n'+str(Taxation),va='center',ha='center')
+    plt.text(2,-Taxation*0.5,'Taxation\n'+str(Taxation),va='center',ha='center')
   if Financial_expenses > 0:
-    plt.text(2,Financial_expenses*0.5+Taxation,'Financial expenses\n'+str(Financial_expenses),va='center',ha='center')
+    plt.text(2,-Financial_expenses*0.5-Taxation,'Financial expenses\n'+str(Financial_expenses),va='center',ha='center')
   if Other_operating_expenses > 0:
-    plt.text(2,Other_operating_expenses*0.5+Financial_expenses+Taxation,'Other operating\nexpenses '+str(Other_operating_expenses),va='center',ha='center')
+    plt.text(2,-Other_operating_expenses*0.5-Financial_expenses-Taxation,'Other operating\nexpenses '+str(Other_operating_expenses),va='center',ha='center')
   if COGS > 0:
-    plt.text(2,COGS*0.5+Other_operating_expenses+Financial_expenses+Taxation,'COGS\n'+str(COGS),va='center',ha='center')
+    plt.text(2,-COGS*0.5-Other_operating_expenses-Financial_expenses-Taxation,'COGS\n'+str(COGS),va='center',ha='center')
   plt.subplot(2,1,2)
   plt.bar(['Gross profit','EBIT','EBT','Net income'],[Gross_profit,EBIT,EBT,Net_income],color=['seashell','peachpuff','sandybrown','chocolate'])
   plt.hlines(0,-1,3,colors='red',linestyle='--')
