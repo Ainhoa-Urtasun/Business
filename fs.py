@@ -36,15 +36,15 @@ def Balance(Fixed_assets,Stocks,Debtors,Cash,Capital,Retained_earnings,Noncurren
     plt.text(1,Capital*0.5+Retained_earnings+Noncurrent_liabilities+Current_liabilities,'Capital\n'+str(Capital),va='center',ha='center')
   plt.show()
   
-def Income(Revenue,Expenses,COGS,Other_operating_expenses,Financial_expenses,Taxation,Gross_profit,EBIT,EBT,Net_income):
+def Income(Revenue,COGS,Other_operating_expenses,Financial_expenses,Taxation,Gross_profit,EBIT,EBT,Net_income):
   fig = plt.figure(figsize=(10,10))
-  labels = ['Revenue','Expenses','Classified expenses']
+  labels = ['Revenue','Expenses']
   plt.subplot(2,1,1)
   seaborn.despine(left=True, bottom=True, right=True)
-  plt.bar(labels,[Revenue,-Expenses,-Taxation],color=['green','darkorchid','thistle'])
-  plt.bar(labels,[0,0,-Financial_expenses],bottom=[Revenue,-Expenses,-Taxation],color=['green','darkorchid','plum'])
-  plt.bar(labels,[0,0,-Other_operating_expenses],bottom=[Revenue,-Expenses,-Taxation-Financial_expenses],color=['green','darkorchid','violet'])
-  plt.bar(labels,[0,0,-COGS],bottom=[Revenue,-Expenses,-Taxation-Financial_expenses-Other_operating_expenses],color=['green','darkorchid','purple'])
+  plt.bar(labels,[Revenue,-Taxation],color=['green','thistle'])
+  plt.bar(labels,[0,-Financial_expenses],bottom=[Revenue,-Taxation],color=['green','plum'])
+  plt.bar(labels,[0,-Other_operating_expenses],bottom=[Revenue,-Taxation-Financial_expenses],color=['green','violet'])
+  plt.bar(labels,[0,-COGS],bottom=[Revenue,-Taxation-Financial_expenses-Other_operating_expenses],color=['green','purple'])
   plt.xticks([])
   plt.hlines(0,-1,3,colors='red',linestyle='--')
   plt.title('Income Statement')
