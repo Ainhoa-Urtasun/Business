@@ -46,7 +46,7 @@ def Income(Revenue,COGS,Other_operating_expenses,Financial_expenses,Taxation,Gro
   plt.bar(labels,[0,-Other_operating_expenses],bottom=[Revenue,-Taxation-Financial_expenses],color=['green','violet'])
   plt.bar(labels,[0,-COGS],bottom=[Revenue,-Taxation-Financial_expenses-Other_operating_expenses],color=['green','purple'])
   plt.hlines(0,-1,3,colors='red',linestyle='--')
-  plt.xtick([])
+  plt.xticks([])
   plt.text(2,0,'Expenses')
   plt.title('Income Statement')
   if Revenue > 0:
